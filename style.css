@@ -79,19 +79,14 @@ i
   font-size: 1.8rem;
 }
 
-.dice-container
+.show-dice
 {
-  height: 10vh;
-}
-
-.dice
-{
-  border: 1px solid black;
   border-radius: 10px;
-  box-shadow: 3px 4px 5px rgb(78, 81, 83);
-  height: 75px;
-  width: 75px;
-  margin-top: 8px ;
+  box-shadow: 3px 4px 6px rgb(78, 81, 83);
+  text-align: center;
+  line-height: 55px;
+  font-size: 56px;
+  margin: 20px auto;
 }
 
 .rules
