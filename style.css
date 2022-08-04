@@ -60,7 +60,7 @@ i
 
 .round-points
 {
-  width: 100px;
+  width: 120px;
   height: 80px;
   background-color: crimson;
   color: #f1f1f1;
@@ -92,4 +92,12 @@ i
   height: 75px;
   width: 75px;
   margin-top: 8px ;
+}
+
+.rules
+{
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  font-size: 1.5rem;
 }
