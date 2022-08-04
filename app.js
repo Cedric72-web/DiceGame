@@ -61,8 +61,6 @@ roll.addEventListener('click', () => {
   // Affichage du score du tour dans la case SCORE-TOUR
   roundScorePlayer1 = roundScorePlayer1 + diceScore;
   player1CurrentPoints.innerHTML = roundScorePlayer1;
-  
-  return roundScorePlayer1;
 })
 
 // ----- * END FONCTION ROLLDICE * -----
