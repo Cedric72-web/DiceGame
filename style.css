@@ -5,12 +5,91 @@
   box-sizing: border-box;
 }
 
-html{
+body{
   font-family: 'Lato', sans-serif;
   text-align: center;
+  background-color: rgb(172, 162, 162);
+  text-transform: uppercase;
+}
+
+h3
+{
+  font-size: 2.5rem;  
+}
+
+h1, .roll, .hold
+{
+  font-size: 1.8rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+i
+{
+  color: crimson;
 }
 
 .player1, .player2,.dice
 {
   width: 100vw;
+  margin: 5px 0;
+}
+
+.player
+{
+  height: 33vh;
+  width: 100vw;
+}
+
+.player1
+{
+  background-color: rgb(226, 224, 222);
+}
+
+.player2
+{
+  background-color: rgb(243, 230, 217);
+}
+
+.total-points
+{
+  font-size: 2.5rem;
+  color: crimson;
+}
+
+.round-points
+{
+  width: 100px;
+  height: 80px;
+  background-color: crimson;
+  color: #f1f1f1;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.current
+{
+  color: black;
+  text-transform: uppercase;
+}
+
+.points
+{
+  font-size: 1.8rem;
+}
+
+.dice-container
+{
+  height: 10vh;
+}
+
+.dice
+{
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px rgb(78, 81, 83);
+  height: 75px;
+  width: 75px;
+  margin-top: 8px ;
 }
