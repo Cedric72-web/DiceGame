@@ -22,6 +22,10 @@ h1, .roll, .hold
   font-size: 1.2rem;
   font-weight: 300;
   cursor: pointer;
+}
+
+h1, .roll
+{
   padding-top: 5px;
 }
 
@@ -85,7 +89,7 @@ i
   color: #f1f1f1;
   border-radius: 5px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .current
