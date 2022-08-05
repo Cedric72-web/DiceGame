@@ -18,11 +18,6 @@ let holdScorePlayer1 = 0;
 let holdScorePlayer2 = 0;
 let roundPlayer = 'player1';
 const rules = document.getElementById('rules');
-let holdScore = 0
-
-// ----- * END DEFINITION DES VARIABLES * -----
-
-// ----- * START FONCTION rules * -----
 
 // ----- * END DEFINITION DES VARIABLES * -----
 
@@ -46,18 +41,8 @@ newGame.addEventListener('click', () => {
   player1 = prompt('Entrez le nom du joueur 1:');
   player1Name.innerHtml = player1 + "<span id=\"round-player1\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
   player2 = prompt('Entrez le nom du joueur 2:');
-  player2Name.innerHtml = player2 + "<span id=\"round-player2\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
+  player2Name.innerHtml = player2 + "<span id=\"round-player\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
   alert('Lancer la partie?');
-});
-
-// ----- * END FONCTION newGame * -----
-
-
-// ----- * START FONCTION rollDice * -----
-
-roll.addEventListener('click', () => {
-  let dice = document.getElementById('dice');
-  playerRound = 'player1';
   roundPlayer1.classList.remove('hide');
   if(roundPlayer == 'player1')
   {
@@ -73,7 +58,6 @@ roll.addEventListener('click', () => {
 roll.addEventListener('click', () => {
   let dice = document.getElementById('dice');
   // playerRound = 'player1';
->>>>>>> dev
 
   // Générer un nombre entre 1 et 6
   let diceScore = Math.floor(Math.random() * 6 + 1);
@@ -83,28 +67,6 @@ roll.addEventListener('click', () => {
   dice.classList.remove(...classDice);
   newDice = dice.classList.toggle('bi-dice-' + diceScore);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // Affichage du score du tour dans la case SCORE-TOUR
-  roundScorePlayer1 = roundScorePlayer1 + diceScore;
-  player1CurrentPoints.innerHTML = roundScorePlayer1;
-})
-
-// ----- * END FONCTION ROLLDICE * -----
-
-// ----- * START FONCTION HOLDSCORE * -----
-=======
-  if(diceScore==1)
-  {
-    roundScorePlayer1 = 0;
-    player1CurrentPoints.innerHTML = roundScorePlayer1;
-  }
-  else
-  {
-    // Affichage du score du tour dans la case SCORE-TOUR
-    roundScorePlayer1 = roundScorePlayer1 + diceScore;
-    player1CurrentPoints.innerHTML = roundScorePlayer1;
-=======
   if(diceScore==1)
   {
     roundScorePlayer1 = 0;
@@ -138,45 +100,12 @@ roll.addEventListener('click', () => {
       roundScorePlayer2 = roundScorePlayer2 + diceScore;
       player2CurrentPoints.innerHTML = roundScorePlayer2;
     }
->>>>>>> dev
   }
 })
 
 // ----- * END FONCTION rollDice * -----
 
 // ----- * START FONCTION holdScore * -----
-<<<<<<< HEAD
->>>>>>> dev
-
-hold.addEventListener('click', () => {
-  // Affichage du score total du joueur1
-  holdScore = holdScore + roundScorePlayer1;
-  player1TotalPoints.innerHTML = holdScore;
-<<<<<<< HEAD
-=======
-  if(holdScore >= 100)
-  {
-    console.log('Le joueur a gagné');
-  }
->>>>>>> dev
-  
-  // Remise à zéro du score du tour
-  roundScorePlayer1 = 0;
-  document.getElementById('player1-current-points').innerHTML = roundScorePlayer1;
-})
-
-<<<<<<< HEAD
-// ----- * END FONCTION HOLDSCORE * -----
-=======
-// ----- * END FONCTION holdScore * -----
-
-// ----- * START FONCTION changePlayer * -----
-
-
-
-// ----- * END FONCTION changePlayer * -----
->>>>>>> dev
-=======
 
 hold.addEventListener('click', () => {
   
@@ -185,11 +114,9 @@ hold.addEventListener('click', () => {
     // Affichage du score total du joueur1
     holdScorePlayer1 = holdScorePlayer1 + roundScorePlayer1;
     player1TotalPoints.innerHTML = holdScorePlayer1;
-
     // Remise à zéro du score du tour
     roundScorePlayer1 = 0;
     player1CurrentPoints.innerHTML = roundScorePlayer1;
-
     if(holdScorePlayer1 >= 100)
     {
       alert(player1 + ' a gagné !');
@@ -203,11 +130,9 @@ hold.addEventListener('click', () => {
     // Affichage du score total du joueur2
     holdScorePlayer2 = holdScorePlayer2 + roundScorePlayer2;
     player2TotalPoints.innerHTML = holdScorePlayer2;
-
     // Remise à zéro du score du tour
     roundScorePlayer2 = 0;
     player2CurrentPoints.innerHTML = roundScorePlayer2;
-
     if(holdScorePlayer2 >= 100)
     {
       alert(player2 + ' a gagné !');
@@ -220,4 +145,3 @@ hold.addEventListener('click', () => {
 })
 
 // ----- * END FONCTION holdScore * -----
->>>>>>> dev
