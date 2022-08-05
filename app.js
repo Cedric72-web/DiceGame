@@ -41,7 +41,7 @@ newGame.addEventListener('click', () => {
   player1 = prompt('Entrez le nom du joueur 1:');
   player1Name.innerHtml = player1 + "<span id=\"round-player1\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
   player2 = prompt('Entrez le nom du joueur 2:');
-  player2Name.innerHtml = player2 + "<span id=\"round-player\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
+  player2Name.innerHtml = player2 + "<span id=\"round-player1\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
   alert('Lancer la partie?');
   roundPlayer1.classList.remove('hide');
   if(roundPlayer == 'player1')
@@ -145,3 +145,9 @@ hold.addEventListener('click', () => {
 })
 
 // ----- * END FONCTION holdScore * -----
+
+// ----- * START FONCTION changePlayer * -----
+
+
+
+// ----- * END FONCTION changePlayer * -----
