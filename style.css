@@ -12,10 +12,10 @@ body{
   text-transform: uppercase;
 }
 
-h3
+/* h3
 {
   font-size: 1.8rem;
-}
+} */
 
 h1, .roll, .hold
 {
@@ -85,7 +85,7 @@ i
   color: #f1f1f1;
   border-radius: 5px;
   margin: 0 auto;
-  /* margin-top: 80px; */
+  margin-top: 50px;
 }
 
 .current
