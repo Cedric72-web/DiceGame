@@ -14,12 +14,12 @@ body{
 
 h3
 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
 }
 
 h1, .roll, .hold
 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 300;
   cursor: pointer;
   padding-top: 5px;
@@ -38,7 +38,7 @@ i
 
 .player
 {
-  height: 33vh;
+  height: 30vh;
   width: 100vw;
 }
 
@@ -80,22 +80,24 @@ i
 .round-points
 {
   width: 120px;
-  height: 80px;
+  height: 60px;
   background-color: crimson;
   color: #f1f1f1;
+  border-radius: 5px;
   margin: 0 auto;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 
 .current
 {
   color: black;
   text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .points
 {
-  font-size: 1.8rem;
+  font-size: 1rem;
 }
 
 .show-dice

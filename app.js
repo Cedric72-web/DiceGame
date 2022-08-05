@@ -57,7 +57,6 @@ newGame.addEventListener('click', () => {
 
 roll.addEventListener('click', () => {
   let dice = document.getElementById('dice');
-  // playerRound = 'player1';
 
   // Générer un nombre entre 1 et 6
   let diceScore = Math.floor(Math.random() * 6 + 1);
@@ -146,8 +145,12 @@ hold.addEventListener('click', () => {
 
 // ----- * END FONCTION holdScore * -----
 
-// ----- * START FONCTION changePlayer * -----
+// ----- * START FONCTION animeDice * -----
 
+function animeDice()
+{
+  let dice = document.getElementById('dice');
 
+}
 
-// ----- * END FONCTION changePlayer * -----
+// ----- * END FONCTION animeDice * -----
