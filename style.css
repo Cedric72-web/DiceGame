@@ -14,7 +14,7 @@ body{
 
 h3
 {
-  font-size: 2.5rem;  
+  font-size: 2.5rem;
 }
 
 h1, .roll, .hold
@@ -50,6 +50,25 @@ i
 .player2
 {
   background-color: rgb(243, 230, 217);
+}
+
+.player-container
+{
+  position: relative;
+}
+
+#round-player1, #round-player2
+{
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.0rem;
+}
+
+.hide
+{
+  display: none;
 }
 
 .total-points
