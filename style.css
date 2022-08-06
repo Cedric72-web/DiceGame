@@ -63,6 +63,7 @@ i
 
 #round-player1, #round-player2
 {
+  float: right;
   margin-left: 10px;
   position: absolute;
   top: 50%;
@@ -73,6 +74,11 @@ i
 .hide
 {
   display: none;
+}
+
+.lost
+{
+  color: black;
 }
 
 .total-points

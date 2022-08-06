@@ -39,10 +39,13 @@ rules.addEventListener('click', () => {
 
 newGame.addEventListener('click', () => {
   player1 = prompt('Entrez le nom du joueur 1:');
-  player1Name.innerHtml = player1 + "<span id=\"round-player1\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
+  player1Name.innerHtml = `${player1.value} <span id="round-player1" class="hide"><i class="bi bi-circle-fill"></i></span>`;
+  console.log(player1)
   player2 = prompt('Entrez le nom du joueur 2:');
-  player2Name.innerHtml = player2 + "<span id=\"round-player1\" class=\"hide\"><i class=\"bi bi-circle-fill\"></i></span>";
+  player2Name.innerHtml = `${player2} <span id="round-player2" class="hide"><i class="bi bi-circle-fill"></i></span>`;
   alert('Lancer la partie?');
+  roll.classList.remove('hide');
+  hold.classList.remove('hide');
   roundPlayer1.classList.remove('hide');
   if(roundPlayer == 'player1')
   {
@@ -56,33 +59,22 @@ newGame.addEventListener('click', () => {
 // ----- * START FONCTION rollDice * -----
 
 roll.addEventListener('click', () => {
-  let dice = document.getElementById('dice');
 
-  // Générer un nombre entre 1 et 6
-  let diceScore = Math.floor(Math.random() * 6 + 1);
-
-  const classDice = ['bi-dice-1', 'bi-dice-2', 'bi-dice-3', 'bi-dice-4', 'bi-dice-5', 'bi-dice-6']
-
-  dice.classList.remove(...classDice);
-  newDice = dice.classList.toggle('bi-dice-' + diceScore);
+  dice.classList.remove('lost')
+  diceScore = showDice();
 
   if(diceScore==1)
   {
+    dice.classList.add('lost')
     roundScorePlayer1 = 0;
     roundScorePlayer2 = 0;
     if(roundPlayer == 'player1')
     {
-      roundPlayer2.classList.remove('hide');
-      roundPlayer1.classList.add('hide');
-      player1CurrentPoints.innerHTML = roundScorePlayer1;
-      roundPlayer = 'player2';
+      changeToPlayer2();
     }
     else
     {
-      roundPlayer2.classList.add('hide');
-      roundPlayer1.classList.remove('hide');
-      player2CurrentPoints.innerHTML = roundScorePlayer2;
-      roundPlayer = 'player1';
+      changeToPlayer1();
     }
   }
   else
@@ -113,32 +105,30 @@ hold.addEventListener('click', () => {
     // Affichage du score total du joueur1
     holdScorePlayer1 = holdScorePlayer1 + roundScorePlayer1;
     player1TotalPoints.innerHTML = holdScorePlayer1;
+
     // Remise à zéro du score du tour
     roundScorePlayer1 = 0;
-    player1CurrentPoints.innerHTML = roundScorePlayer1;
+
     if(holdScorePlayer1 >= 100)
     {
       alert(player1 + ' a gagné !');
     }
-    roundPlayer2.classList.remove('hide');
-    roundPlayer1.classList.add('hide');
-    roundPlayer = 'player2';
+    changeToPlayer2();
   }
   else
   {
     // Affichage du score total du joueur2
     holdScorePlayer2 = holdScorePlayer2 + roundScorePlayer2;
     player2TotalPoints.innerHTML = holdScorePlayer2;
+
     // Remise à zéro du score du tour
     roundScorePlayer2 = 0;
-    player2CurrentPoints.innerHTML = roundScorePlayer2;
+
     if(holdScorePlayer2 >= 100)
     {
       alert(player2 + ' a gagné !');
     }
-    roundPlayer2.classList.add('hide');
-    roundPlayer1.classList.remove('hide');
-    roundPlayer = 'player1';
+    changeToPlayer1()
   }
   
 })
@@ -149,8 +139,50 @@ hold.addEventListener('click', () => {
 
 function animeDice()
 {
+
+}
+// ----- * END FONCTION animeDice * -----
+
+// ----- * START FONCTION showDice * -----
+
+function showDice()
+{
+
   let dice = document.getElementById('dice');
+
+  const classDice = ['bi-dice-1', 'bi-dice-2', 'bi-dice-3', 'bi-dice-4', 'bi-dice-5', 'bi-dice-6'];
+
+    // Générer un nombre entre 1 et 6
+  let diceScore = Math.floor(Math.random() * 6 + 1);
+
+  dice.classList.remove(...classDice);
+  newDice = dice.classList.toggle('bi-dice-' + diceScore);
+  return diceScore;
 
 }
 
-// ----- * END FONCTION animeDice * -----
+// ----- * END FONCTION showDice * -----
+
+// ----- * START FONCTION changeToPlayer1 * -----
+
+function changeToPlayer1()
+{
+  roundPlayer2.classList.add('hide');
+  roundPlayer1.classList.remove('hide');
+  player2CurrentPoints.innerHTML = roundScorePlayer2;
+  roundPlayer = 'player1';
+}
+
+// ----- * END FONCTION changeToPlayer1 * -----
+
+// ----- * START FONCTION changeToPlayer2 * -----
+
+function changeToPlayer2()
+{
+  roundPlayer1.classList.add('hide');
+  roundPlayer2.classList.remove('hide');
+  player1CurrentPoints.innerHTML = roundScorePlayer2;
+  roundPlayer = 'player2';
+}
+
+// ----- * END FONCTION changeToPlayer2 * -----
