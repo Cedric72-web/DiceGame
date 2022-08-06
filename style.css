@@ -46,16 +46,6 @@ i
   width: 100vw;
 }
 
-.player1
-{
-  background-color: rgb(226, 224, 222);
-}
-
-.player2
-{
-  background-color: rgb(243, 230, 217);
-}
-
 .player-container
 {
   position: relative;

@@ -5,15 +5,19 @@ const roll = document.getElementById('roll');
 const hold = document.getElementById('hold');
 let player1Name = document.getElementById('player1-name');
 let roundPlayer1 = document.getElementById('round-player1');
+let player1Container = document.querySelector('.player1');
 let player2Name = document.getElementById('player2-name');
 let roundPlayer2 = document.getElementById('round-player2');
+let player2Container = document.querySelector('.player2');
 let player1TotalPoints = document.getElementById('player1-total-points');
 let player1CurrentPoints = document.getElementById('player1-current-points');
 let player2TotalPoints = document.getElementById('player2-total-points');
 let player2CurrentPoints = document.getElementById('player2-current-points');
+let dice = document.getElementById('dice');
 let roundScorePlayer1 = 0;
 let roundScorePlayer2 = 0;
 let totalPlayer1 = 0;
+let totalPlayer2 = 0;
 let holdScorePlayer1 = 0;
 let holdScorePlayer2 = 0;
 let roundPlayer = 'player1';
@@ -40,17 +44,17 @@ rules.addEventListener('click', () => {
 newGame.addEventListener('click', () => {
   player1 = prompt('Entrez le nom du joueur 1:');
   player1Name.innerHtml = `${player1.value} <span id="round-player1" class="hide"><i class="bi bi-circle-fill"></i></span>`;
-  console.log(player1)
   player2 = prompt('Entrez le nom du joueur 2:');
   player2Name.innerHtml = `${player2} <span id="round-player2" class="hide"><i class="bi bi-circle-fill"></i></span>`;
   alert('Lancer la partie?');
+  player1Container.classList.remove('hide');
+  player2Container.classList.remove('hide');
+  dice.classList.remove('hide');
   roll.classList.remove('hide');
   hold.classList.remove('hide');
-  roundPlayer1.classList.remove('hide');
-  if(roundPlayer == 'player1')
-  {
-    roundPlayer2.classList.add('hide');
-  }
+  player1TotalPoints.innerHTML = totalPlayer1;
+  player2TotalPoints.innerHTML = totalPlayer2;
+  changeToPlayer1();
 });
 
 // ----- * END FONCTION newGame * -----
@@ -112,6 +116,11 @@ hold.addEventListener('click', () => {
     if(holdScorePlayer1 >= 100)
     {
       alert(player1 + ' a gagné !');
+      player1Container.style.backgroundColor = 'rgb(180, 221, 221)';
+      player2Container.style.backgroundColor = 'rgb(243, 230, 217)';
+      roll.classList.add('hide');
+      hold.classList.add('hide');
+      return;
     }
     changeToPlayer2();
   }
@@ -127,6 +136,11 @@ hold.addEventListener('click', () => {
     if(holdScorePlayer2 >= 100)
     {
       alert(player2 + ' a gagné !');
+      player2Container.style.backgroundColor = 'rgb(180, 221, 221)';
+      player1Container.style.backgroundColor = 'rgb(243, 230, 217)';
+      roll.classList.add('hide');
+      hold.classList.add('hide');
+      return;
     }
     changeToPlayer1()
   }
@@ -148,7 +162,7 @@ function animeDice()
 function showDice()
 {
 
-  let dice = document.getElementById('dice');
+  
 
   const classDice = ['bi-dice-1', 'bi-dice-2', 'bi-dice-3', 'bi-dice-4', 'bi-dice-5', 'bi-dice-6'];
 
@@ -170,6 +184,8 @@ function changeToPlayer1()
   roundPlayer2.classList.add('hide');
   roundPlayer1.classList.remove('hide');
   player2CurrentPoints.innerHTML = roundScorePlayer2;
+  player1Container.style.backgroundColor = 'rgb(180, 221, 221)';
+  player2Container.style.backgroundColor = 'rgb(243, 230, 217)';
   roundPlayer = 'player1';
 }
 
@@ -182,6 +198,8 @@ function changeToPlayer2()
   roundPlayer1.classList.add('hide');
   roundPlayer2.classList.remove('hide');
   player1CurrentPoints.innerHTML = roundScorePlayer2;
+  player2Container.style.backgroundColor = 'rgb(180, 221, 221)';
+  player1Container.style.backgroundColor = 'rgb(243, 230, 217)';
   roundPlayer = 'player2';
 }
 
