@@ -42,10 +42,6 @@ rules.addEventListener('click', () => {
 // ----- * START FONCTION newGame * -----
 
 newGame.addEventListener('click', () => {
-  player1 = prompt('Entrez le nom du joueur 1:');
-  player1Name.innerHtml = `${player1.value} <span id="round-player1" class="hide"><i class="bi bi-circle-fill"></i></span>`;
-  player2 = prompt('Entrez le nom du joueur 2:');
-  player2Name.innerHtml = `${player2} <span id="round-player2" class="hide"><i class="bi bi-circle-fill"></i></span>`;
   alert('Lancer la partie?');
   player1Container.classList.remove('hide');
   player2Container.classList.remove('hide');
